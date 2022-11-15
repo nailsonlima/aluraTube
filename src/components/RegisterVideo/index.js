@@ -36,7 +36,7 @@ export default function RegisterVideo() {
     const formCadastro = useForm({
         initialValues: { titulo: "Frost punk", url: "https://www.youtube.com/watch?v=IM-MyZYmAhQ" }
     });
-    const [formVisivel, setFormVisivel] = React.useState(true);
+    const [formVisivel, setFormVisivel] = React.useState(false);
     /*
     ## O que precisamos para o form funcionar?
     - pegar os dados, que precisam vir do state
@@ -59,7 +59,7 @@ export default function RegisterVideo() {
                         console.log(formCadastro.values);
 
                         // Contrato entre o nosso Front e o BackEnd
-                        
+
                         supabase.from("video").insert({
                             title: formCadastro.values.titulo,
                             url: formCadastro.values.url,
